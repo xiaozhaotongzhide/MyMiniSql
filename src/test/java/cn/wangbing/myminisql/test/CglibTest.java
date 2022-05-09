@@ -1,11 +1,11 @@
-package MyMiniSql.Tools;
+package cn.wangbing.myminisql.test;
+
+import cn.wangbing.myminisql.utils.CglibBean;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
+
 public class CglibTest {
-
-
-//    @SuppressWarnings("unchecked")
     public static void main(String[] args) throws ClassNotFoundException {
 
         // 设置类成员属性
@@ -44,5 +44,6 @@ public class CglibTest {
         for (int i = 0; i < methods.length; i++) {
             System.out.println(methods[i].getName());
         }
+
     }
 }

@@ -1,4 +1,4 @@
-package MyMiniSql.Tools;
+package cn.wangbing.myminisql.utils;
 
 import net.sf.cglib.beans.BeanGenerator;
 import net.sf.cglib.beans.BeanMap;
