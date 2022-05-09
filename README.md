@@ -16,10 +16,19 @@
 
 #### 1.建表
 
-create table Student (name,sex,age);
+```sql
+create table 'Student' (
+    'name' char,
+    'sex' char,
+    'age' int
+);
+```
+建表的逻辑:建立一个Entity类
 
-我们通过匹配字符串create table 之后的student为要简历二叉树的名字,之后name,sex,age分别是他的属性
+定义一个int id,作为查询的主键,定义一个map类型存放各个属性,定义一个String的Table.
 
-这里我们的实现是通过java动态的生产类
+我们的数据库是一个比较简单的数据库,所有的存放类都是Entity的实例
+
+建立一个自平衡的二叉树,存储数据
 
 java基础不牢固,尤为突出反射,注解,动态代理,泛型

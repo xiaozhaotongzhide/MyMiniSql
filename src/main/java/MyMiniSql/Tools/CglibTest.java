@@ -1,4 +1,5 @@
 package MyMiniSql.Tools;
+
 import java.lang.reflect.Method;
 import java.util.HashMap;
 public class CglibTest {
@@ -25,7 +26,6 @@ public class CglibTest {
         bean.setValue("name", "454");
 
         bean.setValue("address", "789");
-
         // 从 Bean 中获取值，当然了获得值的类型是 Object
 
         System.out.println("  >> id      = " + bean.getValue("id"));
@@ -40,6 +40,7 @@ public class CglibTest {
         // 通过反射查看所有方法名
         Class clazz = object.getClass();
         Method[] methods = clazz.getDeclaredMethods();
+        System.out.println(clazz.getName());
         for (int i = 0; i < methods.length; i++) {
             System.out.println(methods[i].getName());
         }
