@@ -1,17 +1,13 @@
-package MyMiniSql.Tools.entity;
+package cn.wangbing.myminisql.entity;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 维护了表中存储的对象
  */
-public class Entity {
-
-    /**
-     * 自增长的id
-     */
-    Integer id;
+public class TableEntity extends Structure implements Serializable {
 
     /**
      * 存放了属性map
@@ -22,14 +18,6 @@ public class Entity {
      * 存放了表名
      */
     String tableName;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Map<String, String> getPropertyMap() {
         return propertyMap;
