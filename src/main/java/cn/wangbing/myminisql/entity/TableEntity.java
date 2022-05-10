@@ -19,6 +19,10 @@ public class TableEntity extends Structure implements Serializable {
      */
     String tableName;
 
+    public TableEntity(int id) {
+        super(id);
+    }
+
     public Map<String, String> getPropertyMap() {
         return propertyMap;
     }

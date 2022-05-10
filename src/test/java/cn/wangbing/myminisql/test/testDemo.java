@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class testDemo {
     public static void main(String[] args) {
-        TableEntity entity = new TableEntity();
+        TableEntity entity = new TableEntity(1);
         Scanner scanner = new Scanner(System.in);
         String a = scanner.nextLine();
         String b = scanner.nextLine();
