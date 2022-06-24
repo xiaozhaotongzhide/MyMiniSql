@@ -1,10 +1,48 @@
 package cn.wangbing.myminisql.entity;
 
+import java.util.List;
+
+
 /**
  * 维护了数据库表存储结构
  */
 public class TableAVLtree {
+
+    private String tableName;
+
     private Structure root;
+
+    public Integer id = 0;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    private List<String> propertyList;
+
+    public List<String> getPropertyList() {
+        return propertyList;
+    }
+
+    public void setPropertyList(List<String> propertyList) {
+        this.propertyList = propertyList;
+    }
+
+    public void setRoot(Structure root) {
+        this.root = root;
+    }
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
 
     public Structure getRoot() {
         return root;

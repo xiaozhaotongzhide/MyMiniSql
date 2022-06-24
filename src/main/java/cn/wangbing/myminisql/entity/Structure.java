@@ -1,11 +1,20 @@
 package cn.wangbing.myminisql.entity;
 
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 这个类维护了,一个平衡二叉树的结构,比如左子树和右子树,
  * 同时里面有平衡二叉树的会用到的方法,add,delete,update,find
+ * 维护了表中存储的对象
  */
-public class Structure {
-
+public class Structure implements Serializable {
+    /**
+     * 存放了属性map
+     */
+    Map<String, String> propertyMap = new HashMap<>();
     /**
      * 自增长的id
      */
@@ -14,6 +23,14 @@ public class Structure {
     public Structure leftNode;
 
     public Structure rightNode;
+
+    public Map<String, String> getPropertyMap() {
+        return propertyMap;
+    }
+
+    public void setPropertyMap(Map<String, String> propertyMap) {
+        this.propertyMap = propertyMap;
+    }
 
     public Integer getId() {
         return id;
@@ -37,41 +54,6 @@ public class Structure {
 
     public void setRightNode(Structure rightNode) {
         this.rightNode = rightNode;
-    }
-
-    /**
-     * 增
-     *
-     * @param item
-     */
-    /*public void add(Structure item) {
-
-    }*/
-
-    /**
-     * 删
-     *
-     * @param id
-     */
-    public void delete(Integer id) {
-
-    }
-
-    /**
-     * 改
-     * @param item
-     */
-    public void update(Structure item) {
-
-    }
-
-    /**
-     * 查
-     * @param id
-     * @return
-     */
-    public Structure find(Integer id){
-        return null;
     }
 
 
@@ -164,7 +146,11 @@ public class Structure {
         if (this.leftNode != null) {
             this.leftNode.infixOrder();
         }
-        System.out.println(this);
+        Map<String, String> propertyMap1 = this.getPropertyMap();
+        Collection<String> values = propertyMap1.values();
+        for (String string : values) {
+            System.out.print(string + " ");
+        }
         if (this.rightNode != null) {
             this.rightNode.infixOrder();
         }

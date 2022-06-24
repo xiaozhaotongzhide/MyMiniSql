@@ -1,5 +1,6 @@
 package cn.wangbing.myminisql;
 
+import cn.wangbing.myminisql.entity.TableAVLtree;
 import cn.wangbing.myminisql.service.MainService;
 
 import java.util.Objects;
@@ -14,13 +15,14 @@ public class StartUpMain {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        TableAVLtree table = new TableAVLtree();
         while (status) {
             String line = scanner.nextLine();
             if (Objects.equals(line, "close")) {
                 status = false;
                 return;
             }
-            MainService.Main(line);
+            MainService.Main(line, table);
         }
     }
 }
